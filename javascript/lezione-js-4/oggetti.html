@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const persona = {
+            'nome': 'leonardo',
+            cognome: 'mazzoleni',
+            età: 26,
+        }
+
+        // due modi per accedere alle propietà (chiavi)
+        console.log(persona.nome);
+        console.log(persona['nome']);
+
+        // modificare una propietà
+        persona.nome = 'mario';
+        console.log(persona.nome);
+
+        // eliminare una propietà
+        delete persona.età;
+        console.log(persona);
+
+        // controllare se una proprietà esiste all'interno di un oggetto
+        console.log('cognome' in persona);
+
+        // oggetti possono avere tutti i tipi di dati come valore delle loro propietà
+        const studente = {
+            nome: 'leonardo',
+            età: 26,
+            fuoriCorso: false,
+            materie: ['matematica', 'arte', 'filosofia'],
+            indirizzo: {
+                città: 'bergamo',
+                regione: 'lombardia',
+            },
+        }
+
+        console.log(studente.materie[1]);
+        console.log(studente.indirizzo.città);
+    </script>
+</body>
+</html>
