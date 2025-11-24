@@ -20,4 +20,4 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
     create_date = models.DateField(default=datetime.today().strftime('%Y-%m-%d'))
-    user_id = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='user')
+    user_id = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='posts')

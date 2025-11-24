@@ -6,6 +6,24 @@
 <div>
     ciao
 
+    {% for user in users %}
+        <h2>{{ user.name }} {{ user.surname }}</h2>
+
+        <ul>
+        {% for post in user.posts.all %}
+            <li>
+                <strong>{{ post.title }}</strong><br>
+                {{ post.content }}
+            </li>
+        {% empty %}
+            <li>No posts</li>
+        {% endfor %}
+        </ul>
+
+        <hr>
+    {% endfor %}
+
+
     {{test}}
 
     <img src="{% static 'images/dog.jpg'%}">
