@@ -11,7 +11,12 @@ def index(request):
 
     utente_esempio = User.objects.raw('SELECT * FROM app_user WHERE age > 20')
 
-    return render(request, 'index.html', {'users': utenti, 'singolo': utente_singolo, 'filtrato': utente_filtrato, 'utenti_raw': utente_esempio})
+    # SELECT * FROM users
+    # WHERE age >= 18
+    # WHERE hobby IS NOT NULL;
+    test = User.objects.get_adult_users().has_hobby()
+
+    return render(request, 'index.html', {'test': test, 'users': utenti, 'singolo': utente_singolo, 'filtrato': utente_filtrato, 'utenti_raw': utente_esempio})
 
 
 def contact(request):
