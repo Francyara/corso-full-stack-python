@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %} Home Page {% endblock %}
 
 {% block content %}
 <div>
     ciao
+
+    <img src="{% static 'images/dog.jpg'%}">
 
     <br>
     <br>
@@ -33,4 +36,10 @@
     <div>{{ user }}</div>
     {% endfor %}
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    console.log('ciao2');
+</script>
 {% endblock %}
